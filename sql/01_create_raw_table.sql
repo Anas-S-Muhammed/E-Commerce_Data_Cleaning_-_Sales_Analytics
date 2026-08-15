@@ -11,3 +11,5 @@ CREATE TABLE raw_sales_data (
     status TEXT,
     total TEXT
 );
+
+SELECT * from raw_sales_data
