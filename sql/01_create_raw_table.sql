@@ -13,3 +13,6 @@ CREATE TABLE raw_sales_data (
 );
 
 SELECT * from raw_sales_data
+
+select count(*) from raw_sales_data
+
