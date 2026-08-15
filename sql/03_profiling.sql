@@ -23,3 +23,7 @@ SELECT DISTINCT category FROM raw_sales_data ORDER BY category;
 SELECT DISTINCT status FROM raw_sales_data ORDER BY status;
 
 SELECT DISTINCT payment_method FROM raw_sales_data ORDER BY payment_method;
+
+
+SELECT COUNT(*) FROM raw_sales_data
+WHERE category = 'Category' OR status = 'Status' OR payment_method = 'Payment_Method';
