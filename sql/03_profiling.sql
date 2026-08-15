@@ -11,3 +11,8 @@ SELECT
     COUNT(*) FILTER (WHERE status IS NULL OR status = '') AS null_status,
     COUNT(*) FILTER (WHERE total IS NULL OR total = '') AS null_total
 FROM raw_sales_data;
+
+SELECT id, order_id, COUNT(*)
+FROM raw_sales_data
+GROUP BY id, order_id, customer_name, order_date, product, category, quantity, price, payment_method, status, total
+HAVING COUNT(*) > 1;
