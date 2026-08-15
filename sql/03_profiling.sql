@@ -1,5 +1,13 @@
 SELECT
-count(*) FILTER (where id is null or id = " ") as null_id,
-count(*) FILTER (where customer_name is null or customer_name = '') as null_customer_name,
-count(*) FILTER (where order_id = null or order_id = ' ') as null_order_id,
-
+    COUNT(*) FILTER (WHERE id IS NULL OR id = '') AS null_id,
+    COUNT(*) FILTER (WHERE customer_name IS NULL OR customer_name = '') AS null_customer_name,
+    COUNT(*) FILTER (WHERE order_id IS NULL OR order_id = '') AS null_order_id,
+    COUNT(*) FILTER (WHERE order_date IS NULL OR order_date = '') AS null_order_date,
+    COUNT(*) FILTER (WHERE product IS NULL OR product = '') AS null_product,
+    COUNT(*) FILTER (WHERE category IS NULL OR category = '') AS null_category,
+    COUNT(*) FILTER (WHERE quantity IS NULL OR quantity = '') AS null_quantity,
+    COUNT(*) FILTER (WHERE price IS NULL OR price = '') AS null_price,
+    COUNT(*) FILTER (WHERE payment_method IS NULL OR payment_method = '') AS null_payment_method,
+    COUNT(*) FILTER (WHERE status IS NULL OR status = '') AS null_status,
+    COUNT(*) FILTER (WHERE total IS NULL OR total = '') AS null_total
+FROM raw_sales_data;
